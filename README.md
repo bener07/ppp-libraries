@@ -16,30 +16,30 @@ O funcionamento das bibliotecas segue o seguinte paradigma:
 # Compilação
 Para compilar os ficheiros é necessário incluir todas as bibliotecas usadas. Exemplo de compilação com o ficheiro de exemplo na queue.h:
 ```bash
-gcc test.c queue.h
+gcc test.c queue.c
 ```
 Isto no caso de o ficheiro test.c estar na mesma pasta que o queue.h
 
 ## Para gente com pouca paciência
-Como é óbvio, fiz um makefile para compilar qualquer ficheiro que inclua estas bibliotecas. Para isto é necessário a seguinte estrutura de ficheiros:
+Como é óbvio, fiz um Makefile para compilar qualquer ficheiro que inclua estas bibliotecas. Para isto é necessário a seguinte estrutura de ficheiros:
 ```
 (PPP)
 |
-| -------> makefile
-| -------> libs/ (este repositório)
+| -------> Makefile
+| -------> libs/ (este repositório, atenção para copiar o Makefile deste repo)
 | -------> pasta_exemplo
 |          |
 |          |----> test.c
 | -------> file.c
 ```
-### Compilação com o makefile
-Primeiro vê o que está no makefile e percebe o que lá está. Depois copia o makefile para que fique idêntico à estrutura de exemplo. Move-se o ficheiro makefile para a pasta acima:
+### Compilação com o Makefile
+Primeiro vê o que está no Makefile e percebe o que lá está. Depois copia o Makefile para que fique idêntico à estrutura de exemplo. Move-se o ficheiro Makefile para a pasta acima:
 ```bash
-mv ./makefile ../
+mv ./Makefile ../
 ```
 A pasta PPP puderá ter as pastas e ficheiros que quiserem. Para compilar basta usar o make da seguite forma:
 ```bash
-make FILE=pasta_exemplo/test.c
+make compile FILE=pasta_exemplo/test.c
 ```
 ## Atenção!
 A compilação com o make precisa de estar na pasta raíz do diretório. VER ESTRUTURA DE FICHEIROS EXEMPLO!
