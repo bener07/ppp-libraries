@@ -1,3 +1,4 @@
+#include <stddef.h>
 #ifndef STACK_LOADED
 #endif
 #define STACK_LOADED
@@ -26,12 +27,12 @@ typedef	struct s_node{
 
 typedef struct stack{
 	s_node_t *current;
-  void *(*create)(s_node_t **);
-  int *(*empty)(s_node_t **);
 }stack_t;
 
-void create(s_node_t **current);
-int empty(s_node_t **current);
-void *pop(s_node_t **current);
-void push(s_node_t **current);
-void clean(s_node_t **current);
+s_node_t **create_stack();
+int empty_stack(s_node_t **current);
+void *pop_stack(s_node_t **current);
+void push_to_stack(s_node_t **current, void *data, size_t size);
+void clean_stack(s_node_t **current);
+void showStack(s_node_t **current);
+void *getLastNode(s_node_t **stack);
